@@ -22,7 +22,7 @@ export const restPassword = async (email) => {
         const  {id,user_id} = result;
         const restToken = `${id}#${user_id}`;
 
-        const restUrl = `Frontends eke page eke haddna me url ekt/pwt/${restToken}`;
+        const restUrl = `Frontends test 2 eke page eke haddna me url ekt/pwt/${restToken}`;
         //e ui eka hdala keynna me wag ekek hadala tynne ko
 
         // const transporter = nodemailer.createTransport({
