@@ -19,7 +19,12 @@ export const restPassword = async (email) => {
         }
 
         const result =  await PassResetTokens.create(data)
-        console.log(result)
+        const  {id,user_id} = result;
+        const restToken = `${id}#${user_id}`;
+
+        const restUrl = `Frontend eke page eke haddna me url ekt/pwt/${restToken}`;
+        //e ui eka hdala keynna me wag ekek hadala tynne ko
+
         // const transporter = nodemailer.createTransport({
         //     service: 'gmail', // Use your email service
         //     auth: {
