@@ -2,7 +2,7 @@ import { sequelize } from '../config/db.js';
 import { DataTypes } from 'sequelize';
 import Users from './users.js'; 
 
-
+//This code is changed
 const PassResetTokens = sequelize.define('PassResetTokens', {
   id: {
     type: DataTypes.INTEGER,
