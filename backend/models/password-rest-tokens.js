@@ -1,9 +1,9 @@
 import { sequelize } from '../config/db.js'; 
 import { DataTypes } from 'sequelize';
-import Users from '../models/users.js'; 
+import Users from './users.js'; 
 
 
-const Tasks = sequelize.define('Tasks', {
+const PassResetTokens = sequelize.define('PassResetTokens', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -19,24 +19,8 @@ const Tasks = sequelize.define('Tasks', {
     },
     onDelete: 'CASCADE', 
   },
-  title: {
-    type: DataTypes.STRING(255),
-    allowNull: false,
-  },
-  description: {
-    type: DataTypes.TEXT,
-    allowNull: true,
-  },
   due_date: {
     type: DataTypes.DATE,
-    allowNull: true,
-  },
-  priority: {
-    type: DataTypes.STRING(20),
-    allowNull: true,
-  },
-  category: {
-    type: DataTypes.STRING(50),
     allowNull: true,
   },
   status: {
@@ -54,11 +38,11 @@ const Tasks = sequelize.define('Tasks', {
     allowNull: false,
   },
 }, {
-  tableName: 'tasks', 
+  tableName: 'pwtokens', 
   timestamps: false,  
 });
 
 
-Tasks.belongsTo(Users, { foreignKey: 'user_id', onDelete: 'CASCADE' });
+PassResetTokens.belongsTo(Users, { foreignKey: 'user_id', onDelete: 'CASCADE' });
 
-export default Tasks;
+export default PassResetTokens;

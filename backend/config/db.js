@@ -31,7 +31,7 @@ const sequelize = new Sequelize(dbName, dbUser, dbPassword, {
         console.log('Database connected with Sequelize.');
 
         // Import models dynamically and sync them
-        const { default: User } = await import('../models/Users.js');
+        const { default: User } = await import('../models/users.js');
         const { default: Task } = await import('../models/Task.js');
 
         // Sync models (Create tables if they don't exist, alter if needed)
